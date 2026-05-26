@@ -43,7 +43,7 @@ Al finalizar esta actividad, el estudiante será capaz de:
 1. Clonar el repositorio entregado por el docente.
 
 ```bash
-git clone https://github.com/juazocar/fpy1101-009v-desafio-1.git
+git clone https://github.com/juazocar/fpy1101-008v-desafio-1.git
 ```
 
 2. Entrar a la carpeta del proyecto.
