@@ -16,6 +16,7 @@ from funciones import (
     eliminar_estudiante
 )
 
+
 estudiantes = [
     {
         "rut": "12345678-9",
