@@ -3,7 +3,7 @@ Actividad DUOC UC - Debugging con Python
 Archivo de funciones: funciones.py
 
 Este archivo contiene las funciones del CRUD.
-Tiene errores intencionales de sintaxis, lógica y uso de parámetros.
+Se han corregido los errores intencionales de sintaxis, lógica y uso de parámetros.
 """
 
 def agregar_estudiante(estudiantes):
@@ -20,7 +20,8 @@ def agregar_estudiante(estudiantes):
         "edad": edad
     }
 
-    estudiantes = estudiante
+    # CORRECCIÓN: Se usa .append() para modificar la lista original en lugar de sobreescribirla.
+    estudiantes.append(estudiante)
     print("Estudiante agregado correctamente")
 
 
@@ -34,7 +35,8 @@ def listar_estudiantes(estudiantes):
             print(f"RUT: {estudiantes[i]['rut']}")
             print(f"Nombre: {estudiantes[i]['nombre']}")
             print(f"Carrera: {estudiantes[i]['carrera']}")
-            print(f"Edad: {estudiantes['edad']}")
+            # CORRECCIÓN: Se añade el índice [i] para acceder al estudiante actual en la lista.
+            print(f"Edad: {estudiantes[i]['edad']}")
             print("------------------------")
 
 
@@ -44,7 +46,8 @@ def buscar_estudiante(estudiantes, rut):
     encontrado = False
 
     for estudiante in estudiantes:
-        if estudiante["nombre"] == rut:
+        # CORRECCIÓN: Se compara la variable 'rut' con la clave 'rut' (antes decía 'nombre').
+        if estudiante["rut"] == rut:
             print("Estudiante encontrado")
             print(f"RUT: {estudiante['rut']}")
             print(f"Nombre: {estudiante['nombre']}")
@@ -52,7 +55,8 @@ def buscar_estudiante(estudiantes, rut):
             print(f"Edad: {estudiante['edad']}")
             encontrado = True
 
-    if encontrado = False:
+    # CORRECCIÓN: Se cambia el operador de asignación (=) por el de comparación (==).
+    if encontrado == False:
         print("No se encontró el estudiante")
 
 
@@ -63,11 +67,13 @@ def actualizar_estudiante(estudiantes, rut):
         if estudiante["rut"] == rut:
             nuevo_nombre = input("Ingrese nuevo nombre: ")
             nueva_carrera = input("Ingrese nueva carrera: ")
-            nueva_edad = input("Ingrese nueva edad: ")
+            # CORRECCIÓN RECOMENDADA: Se castea a int para mantener la consistencia con agregar_estudiante.
+            nueva_edad = int(input("Ingrese nueva edad: "))
 
             estudiante["nombre"] = nuevo_nombre
             estudiante["carrera"] = nueva_carrera
-            estudiante["edad"] == nueva_edad
+            # CORRECCIÓN: Se cambia el operador '==' por '=' para realizar la asignación del nuevo valor.
+            estudiante["edad"] = nueva_edad
 
             print("Estudiante actualizado correctamente")
             return
@@ -79,7 +85,8 @@ def eliminar_estudiante(estudiantes, rut):
     print("\n--- Eliminar estudiante ---")
 
     for estudiante in estudiantes:
-        if estudiante["rut"] = rut:
+        # CORRECCIÓN: Se cambia el operador '=' por '==' para poder evaluar la condición.
+        if estudiante["rut"] == rut:
             estudiantes.remove(estudiante)
             print("Estudiante eliminado correctamente")
             return
