@@ -13,20 +13,16 @@ def agregar_estudiante(estudiantes):
     carrera = input("Ingrese carrera: ")
     edad = int(input("Ingrese edad: "))
 
-    estudiante = {
-        "rut": rut,
-        "nombre": nombre,
-        "carrera": carrera,
-        "edad": edad
-    }
+    estudiantes = [rut,nombre,carrera, edad]
 
-    estudiantes = estudiante
+    estudiantes.append(estudiantes)
     print("Estudiante agregado correctamente")
+    return(estudiantes)
 
 
 def listar_estudiantes(estudiantes):
     print("\n--- Lista de estudiantes ---")
-
+    
     if len(estudiantes) == 0:
         print("No hay estudiantes registrados")
     else:
@@ -36,7 +32,8 @@ def listar_estudiantes(estudiantes):
             print(f"Carrera: {estudiantes[i]['carrera']}")
             print(f"Edad: {estudiantes['edad']}")
             print("------------------------")
-
+            listar_estudiantes(estudiantes)
+            return
 
 def buscar_estudiante(estudiantes, rut):
     print("\n--- Buscar estudiante ---")
@@ -51,10 +48,11 @@ def buscar_estudiante(estudiantes, rut):
             print(f"Carrera: {estudiante['carrera']}")
             print(f"Edad: {estudiante['edad']}")
             encontrado = True
+            
 
-    if encontrado = False:
-        print("No se encontró el estudiante")
-
+            if encontrado == False:
+                print("No se encontró el estudiante")
+                return
 
 def actualizar_estudiante(estudiantes, rut):
     print("\n--- Actualizar estudiante ---")
@@ -79,7 +77,7 @@ def eliminar_estudiante(estudiantes, rut):
     print("\n--- Eliminar estudiante ---")
 
     for estudiante in estudiantes:
-        if estudiante["rut"] = rut:
+        if estudiante["rut"] == rut:
             estudiantes.remove(estudiante)
             print("Estudiante eliminado correctamente")
             return

@@ -8,17 +8,11 @@ La misión del estudiante es clonar el repositorio, crear una rama,
 corregir los errores y dejar funcionando el CRUD.
 """
 
-from funciones import (
-    agregar_estudiante,
-    listar_estudiantes,
-    buscar_estudiante,
-    actualizar_estudiante,
-    eliminar_estudiante
-)
+from funciones import (agregar_estudiante,listar_estudiantes,buscar_estudiante,actualizar_estudiante,eliminar_estudiante)
 
-estudiantes = []
+estudiantes: []
 
-def mostrar_menu()
+def mostrar_menu():
     print("\n===== SISTEMA CRUD ESTUDIANTES DUOC UC =====")
     print("1. Agregar estudiante")
     print("2. Listar estudiantes")
@@ -37,23 +31,23 @@ while opcion != 6:
     except:
         print("Error al ingresar la opción")
 
-    if opcion == 1:
+    if opcion == "1":
         agregar_estudiante(estudiantes)
 
     elif opcion == "2":
-        listar_estudiantes()
+        listar_estudiantes(estudiantes)
 
     elif opcion == "3":
         rut = input("Ingrese RUT del estudiante a buscar: ")
-        buscar_estudiante(estudiantes, nombre)
+        buscar_estudiante(estudiantes, rut)
 
     elif opcion == "4":
         rut = input("Ingrese RUT del estudiante a actualizar: ")
-        actualizar_estudiante(estudiantes)
+        actualizar_estudiante(estudiantes, rut)
 
     elif opcion == "5":
         rut = input("Ingrese RUT del estudiante a eliminar: ")
-        eliminar_estudiante(rut, estudiantes)
+        eliminar_estudiante(estudiantes,rut)
 
     elif opcion == "6":
         print("Saliendo del sistema...")
