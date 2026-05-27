@@ -63,25 +63,25 @@ while opcion != "6":
     except:
         print("Error al ingresar la opción")
 
-    if opcion == "1":
+    if opcion == 1:
         agregar_estudiante(estudiantes)
 
-    elif opcion == "2":
+    elif opcion == 2:
         listar_estudiantes(estudiantes)
 
-    elif opcion == "3":
+    elif opcion == 3:
         rut = input("Ingrese RUT del estudiante a buscar: ")
         buscar_estudiante(estudiantes, rut)
 
-    elif opcion == "4":
+    elif opcion == 4:
         rut = input("Ingrese RUT del estudiante a actualizar: ")
         actualizar_estudiante(estudiantes, rut)
 
-    elif opcion == "5":
+    elif opcion == 5:
         rut = input("Ingrese RUT del estudiante a eliminar: ")
         eliminar_estudiante(estudiantes, rut)
 
-    elif opcion == "6":
+    elif opcion == 6:
         print("Saliendo del sistema...")
 
     else:
