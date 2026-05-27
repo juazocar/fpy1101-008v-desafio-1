@@ -16,9 +16,28 @@ from funciones import (
     eliminar_estudiante
 )
 
-estudiantes = []
+estudiantes = [
+    {
+        "rut": "12345678-9",
+        "nombre": "Nikola Tesla",
+        "carrera": "Ingeniería en Informática",
+        "edad": 20
+    },
+    {
+        "rut": "98765432-1",
+        "nombre": "Lara Croft",
+        "carrera": "Diseño Gráfico",
+        "edad": 22
+    },
+    {
+        "rut": "55555555-1",
+        "nombre": "Tony Stark",
+        "carrera": "Ingeniería en Informática",
+        "edad": 45
+    }
+]
 
-def mostrar_menu()
+def mostrar_menu():
     print("\n===== SISTEMA CRUD ESTUDIANTES DUOC UC =====")
     print("1. Agregar estudiante")
     print("2. Listar estudiantes")
@@ -29,31 +48,37 @@ def mostrar_menu()
 
 opcion = 0
 
-while opcion != 6:
+while opcion != "6":
     mostrar_menu()
 
     try:
-        opcion = input("Seleccione una opción: ")
+        optChk = False
+        while optChk == False:
+            opcion = input("Seleccione una opción: ")
+            if opcion.isdigit() and 1 <= int(opcion) <= 6:
+                optChk = True
+            else:
+                print("Error: Opción inválida")
     except:
         print("Error al ingresar la opción")
 
-    if opcion == 1:
+    if opcion == "1":
         agregar_estudiante(estudiantes)
 
     elif opcion == "2":
-        listar_estudiantes()
+        listar_estudiantes(estudiantes)
 
     elif opcion == "3":
         rut = input("Ingrese RUT del estudiante a buscar: ")
-        buscar_estudiante(estudiantes, nombre)
+        buscar_estudiante(estudiantes, rut)
 
     elif opcion == "4":
         rut = input("Ingrese RUT del estudiante a actualizar: ")
-        actualizar_estudiante(estudiantes)
+        actualizar_estudiante(estudiantes, rut)
 
     elif opcion == "5":
         rut = input("Ingrese RUT del estudiante a eliminar: ")
-        eliminar_estudiante(rut, estudiantes)
+        eliminar_estudiante(estudiantes, rut)
 
     elif opcion == "6":
         print("Saliendo del sistema...")
