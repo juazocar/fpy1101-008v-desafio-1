@@ -18,7 +18,7 @@ from funciones import (
 
 estudiantes = []
 
-def mostrar_menu()
+def mostrar_menu():
     print("\n===== SISTEMA CRUD ESTUDIANTES DUOC UC =====")
     print("1. Agregar estudiante")
     print("2. Listar estudiantes")
@@ -30,33 +30,35 @@ def mostrar_menu()
 opcion = 0
 
 while opcion != 6:
+    print(opcion)
     mostrar_menu()
 
     try:
-        opcion = input("Seleccione una opción: ")
+        opcion = int(input("Seleccione una opción: "))
     except:
         print("Error al ingresar la opción")
 
     if opcion == 1:
         agregar_estudiante(estudiantes)
 
-    elif opcion == "2":
-        listar_estudiantes()
+    elif opcion == 2:
+        listar_estudiantes(estudiantes)
 
-    elif opcion == "3":
-        rut = input("Ingrese RUT del estudiante a buscar: ")
-        buscar_estudiante(estudiantes, nombre)
+    elif opcion == 3:
+        rut = input("Ingrese RUT del estudiante a buscar: ").upper().strip()
+        buscar_estudiante(estudiantes, rut)
 
-    elif opcion == "4":
-        rut = input("Ingrese RUT del estudiante a actualizar: ")
-        actualizar_estudiante(estudiantes)
+    elif opcion == 4:
+        rut = input("Ingrese RUT del estudiante a actualizar: ").upper().strip()
+        actualizar_estudiante(estudiantes, rut)
 
-    elif opcion == "5":
-        rut = input("Ingrese RUT del estudiante a eliminar: ")
-        eliminar_estudiante(rut, estudiantes)
+    elif opcion == 5:
+        rut = input("Ingrese RUT del estudiante a eliminar: ").upper().strip()
+        eliminar_estudiante(estudiantes, rut)
 
-    elif opcion == "6":
+    elif opcion == 6:
         print("Saliendo del sistema...")
 
+    
     else:
-        print("Opción inválida")
+        print("Opción inválida")    
