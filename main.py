@@ -49,7 +49,7 @@ def mostrar_menu():
 
 opcion = 0
 
-while opcion != "6":
+while opcion != 6:
     mostrar_menu()
 
     try:
