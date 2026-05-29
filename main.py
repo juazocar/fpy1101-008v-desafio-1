@@ -61,4 +61,7 @@ while opcion != 6:
 
     else:
         
-        print("Opción inválida")
+        print("Opción inválida") 
+        #3
+        
+        

@@ -12,7 +12,7 @@ def agregar_estudiante(estudiantes):
     rutChk = False
     while rutChk == False:
         try:
-            rut = int(input("Ingrese edad: "))
+            rut = int(input("Ingrese rut: "))
             rutChk = True
         except ValueError:
             print("Rut Repetido")    
