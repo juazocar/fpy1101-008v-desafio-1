@@ -6,6 +6,8 @@ IMPORTANTE:
 Este programa contiene errores intencionales.
 La misión del estudiante es clonar el repositorio, crear una rama,
 corregir los errores y dejar funcionando el CRUD.
+git config --global user.name "Martina"
+    git config --global user.email ma.bandai@duocuc.cl
 """
 
 from funciones import (agregar_estudiante,listar_estudiantes,buscar_estudiante,actualizar_estudiante,eliminar_estudiante)
