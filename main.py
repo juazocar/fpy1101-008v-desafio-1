@@ -10,8 +10,6 @@ corregir los errores y dejar funcionando el CRUD.
 
 from funciones import (agregar_estudiante,listar_estudiantes,buscar_estudiante,actualizar_estudiante,eliminar_estudiante)
 
-estudiantes: []
-
 def mostrar_menu():
     print("\n===== SISTEMA CRUD ESTUDIANTES DUOC UC =====")
     print("1. Agregar estudiante")
@@ -31,7 +29,14 @@ while opcion != 6:
     except:
         print("Error al ingresar la opción")
 
-    if opcion == "1":
+    if opcion == 1:
+        print("\n--- Agregar estudiante ---")
+        rut = input("Ingrese RUT: ")
+        nombre = input("Ingrese nombre: ")
+        carrera = input("Ingrese carrera: ")
+        edad = int(input("Ingrese edad: "))
+
+        estudiantes =[rut,nombre,carrera, edad]
         agregar_estudiante(estudiantes)
 
     elif opcion == "2":

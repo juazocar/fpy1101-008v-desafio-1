@@ -6,18 +6,12 @@ Este archivo contiene las funciones del CRUD.
 Tiene errores intencionales de sintaxis, lógica y uso de parámetros.
 """
 
-def agregar_estudiante(estudiantes):
-    print("\n--- Agregar estudiante ---")
-    rut = input("Ingrese RUT: ")
-    nombre = input("Ingrese nombre: ")
-    carrera = input("Ingrese carrera: ")
-    edad = int(input("Ingrese edad: "))
-
-    estudiantes = [rut,nombre,carrera, edad]
-
-    estudiantes.append(estudiantes)
+def agregar_estudiante(estudiantes,nuevo_estudiante):
     print("Estudiante agregado correctamente")
-    return(estudiantes)
+    estudiantes.append(nuevo_estudiante)
+    for estudiante in nuevo_estudiante:
+        print(f"-{estudiante}")
+    return(nuevo_estudiante)
 
 
 def listar_estudiantes(estudiantes):
@@ -30,7 +24,7 @@ def listar_estudiantes(estudiantes):
             print(f"RUT: {estudiantes[i]['rut']}")
             print(f"Nombre: {estudiantes[i]['nombre']}")
             print(f"Carrera: {estudiantes[i]['carrera']}")
-            print(f"Edad: {estudiantes['edad']}")
+            print(f"Edad: {estudiantes[i]['edad']}")
             print("------------------------")
             listar_estudiantes(estudiantes)
             return
