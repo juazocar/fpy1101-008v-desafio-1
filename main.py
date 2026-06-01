@@ -29,7 +29,7 @@ def mostrar_menu():
 
 opcion = "0"
 
-while opcion != 6:
+while opcion != "6":
     mostrar_menu()
 
     try:
@@ -44,15 +44,15 @@ while opcion != 6:
         listar_estudiantes(estudiantes)
 
     elif opcion == "3":
-        rut = input("Ingrese RUT del estudiante a buscar: ")
+        rut = int(input("Ingrese RUT del estudiante a buscar: "))
         buscar_estudiante(estudiantes, rut)
 
     elif opcion == "4":
-        rut = input("Ingrese RUT del estudiante a actualizar: ")
+        rut = int(input("Ingrese RUT del estudiante a actualizar: "))
         actualizar_estudiante(estudiantes, rut)
 
     elif opcion == "5":
-        rut = input("Ingrese RUT del estudiante a eliminar: ")
+        rut = int(input("Ingrese RUT del estudiante a eliminar: "))
         eliminar_estudiante(rut, estudiantes)
 
     elif opcion == "6":
