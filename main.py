@@ -26,6 +26,7 @@ def mostrar_menu():
     print("4. Actualizar estudiante")
     print("5. Eliminar estudiante")
     print("6. Salir")
+    
 
 opcion = 0
 
